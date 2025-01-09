@@ -1,0 +1,118 @@
+Command: mgc vm instances create --ssh-key-name=geff --image.name="cloud-ubuntu-22.04 LTS" --machine-type.name="BV2-2-10" --name="teste-geff-{{random}}" --raw
+Output:
+id: ac86f151-1f59-4f7f-bde0-f7f8753a0311
+
+
+Sub Command: mgc vm instances delete {{created_vm_id}} --no-confirm --raw
+Output:
+
+Sub Command: mgc vm instances list --raw
+Output:
+instances:
+- availability_zone: br-se1-a
+  created_at: 2024-11-13T03:12:24Z
+  error:
+      message: An error occurred while creating your instance. Please try again later or contact support for assistance.
+      slug: create_instance.error
+  id: cb820654-778b-46fd-8a7f-0bd36ef21ad4
+  image:
+      id: f4895a9d-b71c-4d20-a740-ac8467e8b446
+  machine_type:
+      id: 0122fb85-0fd0-47d1-bf25-f24ca6f11493
+  name: test-issue-1226
+  network:
+      ports:
+      - id: 569702d2-ad9d-40ab-b8de-37d91de0e2cf
+  ssh_key_name: name.with.dots
+  state: new
+  status: creating_error
+  updated_at: 2024-11-13T03:12:38Z
+- availability_zone: br-se1-a
+  created_at: 2024-11-13T03:13:02Z
+  error:
+      message: An error occurred while creating your instance. Please try again later or contact support for assistance.
+      slug: create_instance.error
+  id: 1478afec-38f7-4ec7-b8fc-769795b9fad0
+  image:
+      id: f4895a9d-b71c-4d20-a740-ac8467e8b446
+  machine_type:
+      id: 0122fb85-0fd0-47d1-bf25-f24ca6f11493
+  name: test-issue-1226-2
+  network:
+      ports:
+      - id: 9d422609-8780-4fcf-b88d-9d533a456984
+  ssh_key_name: name.with.dots
+  state: new
+  status: creating_error
+  updated_at: 2024-11-13T03:13:08Z
+- availability_zone: br-se1-a
+  created_at: 2024-11-13T03:13:53Z
+  id: a712671e-9702-485b-a36e-46720c7e2f75
+  image:
+      id: f4895a9d-b71c-4d20-a740-ac8467e8b446
+  machine_type:
+      id: 0122fb85-0fd0-47d1-bf25-f24ca6f11493
+  name: test-issue-1226-3
+  network:
+      ports:
+      - id: 1703407c-e542-4bfd-b675-fb6742b34160
+      - id: 9d422609-8780-4fcf-b88d-9d533a456984
+  ssh_key_name: luiz
+  state: running
+  status: completed
+  updated_at: 2024-12-11T14:11:26Z
+- availability_zone: br-se1-a
+  created_at: 2024-12-11T14:53:59Z
+  id: 0249f63d-02b9-4600-af3a-824ed545f547
+  image:
+      id: f4895a9d-b71c-4d20-a740-ac8467e8b446
+  machine_type:
+      id: fc8641f6-f3a4-407c-8612-5576dd9ffdc6
+  name: name-instance-2
+  network:
+      ports:
+      - id: 1a266e34-3548-425d-afad-ebd66e866e23
+  ssh_key_name: luiz
+  state: running
+  status: completed
+  updated_at: 2024-12-11T14:54:20Z
+- availability_zone: br-se1-y
+  created_at: 2024-12-11T14:54:55Z
+  id: 7f4be225-55e6-4a96-8ad5-bc2902d2074b
+  image:
+      id: f4895a9d-b71c-4d20-a740-ac8467e8b446
+  machine_type:
+      id: fc8641f6-f3a4-407c-8612-5576dd9ffdc6
+  name: name-instance-3
+  network:
+      ports:
+      - id: 7213d759-e9fb-49f4-bf57-a767e818f6f0
+  ssh_key_name: luiz
+  state: running
+  status: completed
+  updated_at: 2024-12-11T14:55:43Z
+- availability_zone: br-se1-a
+  created_at: 2025-01-09T20:25:26Z
+  id: e458514e-c887-4131-8382-3cfb74f6cea3
+  image:
+      id: 462a52bb-691a-4864-8ed7-ac9bd6a42807
+  machine_type:
+      id: 601fcfb3-ea30-4f48-84b7-d4471704b936
+  name: teste-geff-1736454324
+  ssh_key_name: geff
+  state: new
+  status: provisioning
+  updated_at: 2025-01-09T18:58:32Z
+- availability_zone: br-se1-a
+  created_at: 2025-01-09T20:26:38Z
+  id: 90630b1b-757b-4dbb-9419-aa55f075bd08
+  image:
+      id: 462a52bb-691a-4864-8ed7-ac9bd6a42807
+  machine_type:
+      id: 601fcfb3-ea30-4f48-84b7-d4471704b936
+  name: teste-geff-1736454396
+  ssh_key_name: geff
+  state: new
+  status: provisioning
+  updated_at: 2025-01-09T18:58:39Z
+

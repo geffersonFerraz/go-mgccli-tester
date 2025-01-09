@@ -1,0 +1,25 @@
+binary_path: /home/gfz/git/go-mgccli-tester/
+commands:
+    - module: vm
+      command: mgc vm instances create --ssh-key-name=geff --image.name="cloud-ubuntu-22.04 LTS" --machine-type.name="BV2-2-10" --name="teste-geff-{{random}}" --raw
+      output_variable: created_vm_id
+      output_target: "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[8|9|aA|bB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}"
+      readonly: false
+      exitcode: 0
+      sec_wait_before_run: 0
+      sec_wait_after_run: 15
+      subcommands: 
+        - command: mgc vm instances delete {{created_vm_id}} --no-confirm --raw
+          exitcode: 0
+          sec_wait_before_run: 0
+          sec_wait_after_run: 40
+        - command: mgc vm instances list --raw
+          exitcode: 0
+    - module: auth
+      command: mgc auth tenant current --raw
+      readonly: true
+      exitcode: 0       
+    - module: vm
+      command: mgc vm instances create --raw
+      readonly: true
+      exitcode: 1
